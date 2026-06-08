@@ -1,0 +1,13 @@
+"""
+    strerror es un flujo independiente para mensajes de error que permite separar la salida normal de los reportes fallidos.
+
+"""
+
+from os import strerror
+
+try:
+    s = open("c:/users/user/Desktop/file.txt", "rt")
+    # Procesamiento.
+    s.close()
+except Exception as exc:
+    print("El archivo no pudo ser abierto:", strerror(exc.errno))
